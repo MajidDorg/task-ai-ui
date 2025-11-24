@@ -1,8 +1,8 @@
 export default function SectionFooterCta() {
   return (
     <section className="w-full bg-[#0f172a]">
-      <div className="mx-auto max-w-[1216px] px-4 py-24 md:px-28">
-        <div className="relative overflow-hidden rounded-[24px] p-6 md:px-[112px] md:py-[96px]">
+      <div className="mx-auto max-w-[1216px] px-0 pt-24 pb-0 md:px-28 md:py-24">
+        <div className="relative mx-auto w-full overflow-hidden rounded-t-none rounded-b-[24px] px-4 py-16 md:px-[112px] md:py-[96px]">
           {/* background with image and overlay */}
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <img
@@ -13,7 +13,7 @@ export default function SectionFooterCta() {
             <div className="absolute inset-0 bg-[rgba(16,13,77,0.64)]" />
           </div>
 
-          <div className="relative grid gap-16 md:grid-cols-[1fr_auto] md:items-start">
+          <div className="relative grid gap-10 md:grid-cols-[1fr_auto] md:items-start md:gap-16">
             {/* left content */}
             <div className="text-shade-on">
               <div className="flex items-center gap-4">
@@ -23,12 +23,28 @@ export default function SectionFooterCta() {
                   className="h-12 w-auto"
                 />
               </div>
-              <p className="mt-6 max-w-2xl text-[20px] leading-[1.6] text-slate-100">
+              <p className="mt-4 text-[16px] leading-[1.6] text-slate-100 md:mt-6 md:max-w-2xl md:text-[20px]">
                 Secured. Verified. Built for ROI — powered by AI to redefine
                 construction finance.
               </p>
 
-              <div className="mt-8 grid grid-cols-2 gap-6 text-[16px] font-bold text-white md:flex md:flex-wrap md:gap-8">
+              {/* CTA (mobile full width) */}
+              <div className="mt-6 md:mt-8">
+                <button
+                  type="button"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-success-60 px-5 py-4 text-[16px] font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:w-auto md:px-8"
+                >
+                  Create Account
+                  <img
+                    src="/assets/Header_ArrowRight.svg"
+                    alt=""
+                    className="h-5 w-5"
+                  />
+                </button>
+              </div>
+
+              {/* Links */}
+              <div className="mt-8 grid grid-cols-1 gap-6 text-[16px] font-bold text-white md:mt-10 md:grid-cols-2 md:flex md:flex-wrap md:gap-8">
                 <a className="hover:opacity-90" href="#">
                   Back to Top
                 </a>
@@ -59,13 +75,13 @@ export default function SectionFooterCta() {
               </div>
             </div>
 
-            {/* right CTA */}
-            <div className="flex justify-end">
+            {/* right CTA (desktop only placement) */}
+            <div className="hidden md:flex md:justify-end">
               <button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-full bg-success-60 px-6 py-4 font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:px-8"
+                className="inline-flex items-center gap-2 rounded-full bg-success-60 px-8 py-4 font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
-                Sign Up <span aria-hidden>→</span>
+                Create Account <span aria-hidden>→</span>
               </button>
             </div>
           </div>
