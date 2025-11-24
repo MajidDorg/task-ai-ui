@@ -1,0 +1,127 @@
+"use client";
+
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import AnimatedContent from "./AnimatedContent";
+
+type RotatingTitleProps = {
+  className?: string;
+};
+
+const MESSAGES = [
+  "Construction Due Diligence With AI",
+  "The AI coPilot to plan, budget, build your next project!",
+  "Ask anything...",
+  "Upload your files or let Your AI create them for you",
+  "Convert your proforma into a project on our marketplace, publish it and find investors!",
+];
+
+export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
+  const [index, setIndex] = useState(0);
+  const [containerHeight, setContainerHeight] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLDivElement>(null);
+  const cycleRef = useRef<number | null>(null);
+
+  // Unified timings (seconds)
+  const IN_S = 0.6;
+  const HOLD_S = 2.0;
+  const OUT_S = 0.6;
+
+  const next = useCallback(() => {
+    setIndex((i) => (i + 1) % MESSAGES.length);
+  }, []);
+
+  const key = useMemo(() => `title-${index}`, [index]);
+  const text = useMemo(() => MESSAGES[index], [index]);
+
+  // Measure the tallest message for the current container width
+  useEffect(() => {
+    const compute = () => {
+      const container = containerRef.current;
+      const measurer = measureRef.current;
+      if (!container || !measurer) return;
+
+      // Set measurer width to container's current width
+      measurer.style.width = `${container.clientWidth}px`;
+
+      let maxH = 0;
+      for (const msg of MESSAGES) {
+        measurer.textContent = msg;
+        const h = measurer.offsetHeight;
+        if (h > maxH) maxH = h;
+      }
+      setContainerHeight(maxH);
+    };
+
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, []);
+
+  // Drive the cycle with a timer so every message advances reliably
+  useEffect(() => {
+    const total = (IN_S + HOLD_S + OUT_S) * 1000;
+    if (cycleRef.current) {
+      window.clearTimeout(cycleRef.current);
+    }
+    cycleRef.current = window.setTimeout(() => {
+      next();
+    }, total);
+    return () => {
+      if (cycleRef.current) {
+        window.clearTimeout(cycleRef.current);
+        cycleRef.current = null;
+      }
+    };
+  }, [index, next]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative"
+      style={containerHeight ? { height: containerHeight } : undefined}
+    >
+      <AnimatedContent
+        key={key}
+        className="inline-block"
+        distance={28}
+        duration={IN_S}
+        ease="power3.out"
+        initialOpacity={0}
+        animateOpacity
+        threshold={0.2}
+        disappearAfter={HOLD_S}
+        disappearDuration={OUT_S}
+        disappearEase="power3.inOut"
+        disableScrollTrigger
+      >
+        <span
+          className={`inline-block ${className}`}
+          style={{
+            backgroundImage: "linear-gradient(to right, #ffffff, #e762ff)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {text}
+        </span>
+      </AnimatedContent>
+      {/* invisible measurer to lock height to tallest message */}
+      <div
+        ref={measureRef}
+        aria-hidden="true"
+        className={`invisible absolute left-0 top-0 pointer-events-none ${className}`}
+      />
+    </div>
+  );
+}
