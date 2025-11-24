@@ -15,10 +15,10 @@ type RotatingTitleProps = {
 
 const MESSAGES = [
   "Construction Due Diligence With AI",
-  "The AI coPilot to plan, budget, build your next project!",
-  "Ask anything...",
-  "Upload your files or let Your AI create them for you",
-  "Convert your proforma into a project on our marketplace, publish it and find investors!",
+  "The AI CoPilot To Plan, Budget, Build Your Next Project!",
+  "Ask Anything...",
+  "Upload Your Files or Let Your AI Create Them For You",
+  "Convert Your Proforma Into A Project On Our Marketplace, Publish It And Find Investors!",
 ];
 
 export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
