@@ -1,3 +1,13 @@
+import Image from "next/image";
+import Footer_The_Handover_Logo_mobile from "../../../public/assets/Footer_The_Handover_Logo_mobile.svg";
+import Footer_The_Handover_Logo_desktop from "../../../public/assets/Footer_The_Handover_Logo_desktop.svg";
+import Footer_ArrowRight from "../../../public/assets/Footer_ArrowRight.svg";
+import Footer_ArrowRight_white from "../../../public/assets/Footer_ArrowRight_white.svg";
+import Footer_Facebook_Vector from "../../../public/assets/Footer_Facebook_Vector.svg";
+import Footer_X_Vector from "../../../public/assets/Footer_X_Vector.svg";
+import Footer_Instagram_Vector from "../../../public/assets/Footer_Instagram_Vector.svg";
+import Footer_Linkedin_Vector from "../../../public/assets/Footer_Linkedin_Vector.svg";
+import Footer_Background from "../../../public/assets/footer_card_background.jpeg";
 export default function SectionFooterCta() {
   return (
     <section className="w-full bg-[#0f172a]">
@@ -5,46 +15,55 @@ export default function SectionFooterCta() {
         <div className="relative mx-auto w-full overflow-hidden rounded-t-none rounded-b-[24px] px-4 py-16 md:px-[112px] md:py-[96px]">
           {/* background with image and overlay */}
           <div aria-hidden className="pointer-events-none absolute inset-0">
-            <img
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover"
-              src="https://www.figma.com/api/mcp/asset/7c6e6387-b57b-420d-b049-7428b1146c74"
+            <div
+              className="absolute inset-0 rounded-t-none rounded-b-[24px] md:rounded-[24px]"
+              style={{
+                background:
+                  "linear-gradient(0deg, rgba(16, 13, 77, 0.64) 0%, rgba(16, 13, 77, 0.64) 100%), url(" +
+                  Footer_Background.src +
+                  "), #312E81",
+                backgroundPosition: "64% 36%",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
             />
-            <div className="absolute inset-0 bg-[rgba(16,13,77,0.64)]" />
           </div>
 
           <div className="relative grid gap-10 md:grid-cols-[1fr_auto] md:items-start md:gap-16">
             {/* left content */}
             <div className="text-shade-on">
               <div className="flex items-center gap-4">
-                <img
-                  alt="THE HANDOVER"
-                  src="https://www.figma.com/api/mcp/asset/4c9c4f59-0975-43ca-b46b-9cf679fa57c6"
-                  className="h-12 w-auto"
+                <Image
+                  src={Footer_The_Handover_Logo_mobile}
+                  alt="Footer The Handover Logo"
+                  className="block md:hidden"
+                />
+                <Image
+                  src={Footer_The_Handover_Logo_desktop}
+                  alt="Footer The Handover Logo"
+                  className="hidden md:block"
+                  width={466}
+                  height={82.3}
                 />
               </div>
-              <p className="mt-4 text-[16px] leading-[1.6] text-slate-100 md:mt-6 md:max-w-2xl md:text-[20px]">
+              <p className="mt-4 md:mt-6 md:max-w-2xl text-[18px] leading-[160%] font-normal text-[var(--Gray-30,#CBD5E1)] font-['Plus Jakarta Sans',sans-serif]">
                 Secured. Verified. Built for ROI — powered by AI to redefine
                 construction finance.
               </p>
 
               {/* CTA (mobile full width) */}
-              <div className="mt-6 md:mt-8">
+              <div className="mt-6 md:mt-8 md:hidden">
                 <button
                   type="button"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-success-60 px-5 py-4 text-[16px] font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:w-auto md:px-8"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#4ADE80] px-5 py-4 text-[16px] font-semibold text-black transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/40 md:w-auto md:px-8 font-['Plus Jakarta Sans',sans-serif]"
                 >
                   Create Account
-                  <img
-                    src="/assets/Header_ArrowRight.svg"
-                    alt=""
-                    className="h-5 w-5"
-                  />
+                  <Image src={Footer_ArrowRight} alt="Footer Arrow Right" />
                 </button>
               </div>
 
               {/* Links */}
-              <div className="mt-8 grid grid-cols-1 gap-6 text-[16px] font-bold text-white md:mt-10 md:grid-cols-2 md:flex md:flex-wrap md:gap-8">
+              <div className="mt-8 grid grid-cols-1 gap-6 text-[16px] font-semibold text-[#F1F5F9] md:mt-10 md:grid-cols-2 md:flex md:flex-wrap md:gap-8 font-['Plus Jakarta Sans',sans-serif]">
                 <a className="hover:opacity-90" href="#">
                   Back to Top
                 </a>
@@ -81,39 +100,38 @@ export default function SectionFooterCta() {
                 type="button"
                 className="inline-flex items-center gap-2 rounded-full bg-success-60 px-8 py-4 font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
-                Create Account <span aria-hidden>→</span>
+                Sign Up{" "}
+                <span aria-hidden>
+                  <Image
+                    src={Footer_ArrowRight_white}
+                    alt="Footer Arrow Right"
+                  />
+                </span>
               </button>
             </div>
           </div>
 
-          <hr className="relative z-[1] mt-10 border-t border-white/30" />
+          <hr className="relative z-1 mt-16 border-t border-white/50" />
 
-          <div className="relative mt-6 flex flex-col items-center justify-between gap-6 text-white/90 md:flex-row">
-            <p className="text-center text-[14px]">
-              Copyright 2025 © The Handover, All Rights Reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              <img
-                alt=""
-                className="h-6 w-6"
-                src="https://www.figma.com/api/mcp/asset/e4a4c8ec-a4e4-4e47-b935-19afa3b1bd32"
+          <div className="relative mt-6 w-full flex flex-col items-center justify-between gap-6 text-white/90 md:flex-row">
+            <div className="flex items-center gap-6 order-1 md:order-2">
+              <Image
+                src={Footer_Facebook_Vector}
+                alt="Footer Facebook Vector"
               />
-              <img
-                alt=""
-                className="h-6 w-6"
-                src="https://www.figma.com/api/mcp/asset/ef5812c2-725a-4364-a703-93b6234b88e7"
+              <Image src={Footer_X_Vector} alt="Footer X Vector" />
+              <Image
+                src={Footer_Instagram_Vector}
+                alt="Footer Instagram Vector"
               />
-              <img
-                alt=""
-                className="h-6 w-6"
-                src="https://www.figma.com/api/mcp/asset/0bb2df6c-03e4-4793-bc3f-9083375ca40b"
-              />
-              <img
-                alt=""
-                className="h-6 w-6"
-                src="https://www.figma.com/api/mcp/asset/d5cdfff0-3d8e-49d5-b724-e594db87bd00"
+              <Image
+                src={Footer_Linkedin_Vector}
+                alt="Footer Linkedin Vector"
               />
             </div>
+            <p className="text-center text-[14px] font-medium leading-[20px] tracking-[-0.084px] text-[var(--Gray-40,#94A3B8)] font-['Plus Jakarta Sans',sans-serif] order-2 md:order-1">
+              Copyright 2025 © The Handover, All Rights Reserved.
+            </p>
           </div>
         </div>
       </div>
