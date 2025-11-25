@@ -2,7 +2,7 @@ import Image from "next/image";
 import TheHandOverLogo from "../../public/assets/The_Hand_Over_Logo.svg";
 import Sparkle from "../../public/assets/Sparkle.svg";
 import ArrowRight from "../../public/assets/Header_ArrowRight.svg";
-
+// comment
 export default function Header() {
   return (
     <header className="w-full bg-[#0f172a]">
