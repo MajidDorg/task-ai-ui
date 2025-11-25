@@ -11,6 +11,7 @@ import AnimatedContent from "./AnimatedContent";
 
 type RotatingTitleProps = {
   className?: string;
+  maxLines?: number;
 };
 
 const MESSAGES = [
@@ -21,9 +22,13 @@ const MESSAGES = [
   "Convert Your Proforma Into A Project On Our Marketplace, Publish It And Find Investors!",
 ];
 
-export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
+export default function RotatingTitle({
+  className = "",
+  maxLines,
+}: RotatingTitleProps) {
   const [index, setIndex] = useState(0);
   const [containerHeight, setContainerHeight] = useState<number | null>(null);
+  const [fittedFontSize, setFittedFontSize] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
   const cycleRef = useRef<number | null>(null);
@@ -50,6 +55,46 @@ export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
       // Set measurer width to container's current width
       measurer.style.width = `${container.clientWidth}px`;
 
+      // If maxLines provided, auto-fit the font size so text fits within maxLines.
+      if (maxLines) {
+        // Get current computed styles
+        measurer.textContent = "A";
+        measurer.style.fontSize = "";
+        const computed = window.getComputedStyle(measurer);
+        const baseFontSize = parseFloat(computed.fontSize || "24");
+
+        // Measure the single line height at current settings to derive clamp height
+        const singleLineHeight =
+          measurer.offsetHeight ||
+          parseFloat(computed.lineHeight || "0") ||
+          baseFontSize * 1.2;
+        const clampHeight = singleLineHeight * maxLines;
+
+        // Binary search the largest font-size that fits the current message within clamp height
+        const fitForText = (msg: string) => {
+          let low = Math.max(10, baseFontSize * 0.5);
+          let high = baseFontSize;
+          for (let i = 0; i < 12; i++) {
+            const mid = (low + high) / 2;
+            measurer.style.fontSize = `${mid}px`;
+            measurer.textContent = msg;
+            const h = measurer.scrollHeight;
+            if (h <= clampHeight + 0.5) {
+              low = mid; // fits, try bigger
+            } else {
+              high = mid; // too big
+            }
+          }
+          return Math.floor(low);
+        };
+
+        const sizeForCurrent = fitForText(MESSAGES[index]);
+        setFittedFontSize(sizeForCurrent);
+        setContainerHeight(clampHeight);
+        return;
+      }
+
+      // Default behavior: lock to tallest message height
       let maxH = 0;
       for (const msg of MESSAGES) {
         measurer.textContent = msg;
@@ -62,7 +107,7 @@ export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
     compute();
     window.addEventListener("resize", compute);
     return () => window.removeEventListener("resize", compute);
-  }, []);
+  }, [index, maxLines]);
 
   // Drive the cycle with a timer so every message advances reliably
   useEffect(() => {
@@ -111,6 +156,7 @@ export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
             backgroundPosition: "center",
             backgroundSize: "cover",
             WebkitTextFillColor: "transparent",
+            ...(fittedFontSize ? { fontSize: `${fittedFontSize}px` } : {}),
           }}
         >
           {text}
@@ -121,6 +167,12 @@ export default function RotatingTitle({ className = "" }: RotatingTitleProps) {
         ref={measureRef}
         aria-hidden="true"
         className={`invisible absolute left-0 top-0 pointer-events-none ${className}`}
+        style={{
+          ...(fittedFontSize ? { fontSize: `${fittedFontSize}px` } : {}),
+          // Ensure the measurer wraps exactly like the visible text
+          whiteSpace: "normal",
+          wordBreak: "break-word",
+        }}
       />
     </div>
   );

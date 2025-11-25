@@ -28,7 +28,7 @@ export default function SectionFeatures() {
       <div className="mx-auto max-w-7xl px-4 py-6 md:px-28 md:py-24">
         {/* Heading */}
         <div className="mb-12 flex flex-col items-center gap-4 text-center md:mb-16">
-          <span className="rounded-full border border-indigo-300 bg-white px-3 py-1 text-[14px] font-semibold text-[#4F46E5] md:px-3 md:py-1.5 md:text-sm font-['Plus Jakarta Sans',sans-serif]">
+          <span className="rounded-full border border-indigo-300 bg-white px-4 py-1 text-[14px] font-semibold text-[#4F46E5] md:px-6 md:py-1.5 md:text-sm font-['Plus Jakarta Sans',sans-serif]">
             Features of TheHandover AI
           </span>
           <h2 className="bg-linear-to-r from-[#ffffff] to-[#e762ff] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl md:leading-[68px]">

@@ -1,8 +1,28 @@
 import Sparkle from "../../../public/assets/Try_Now_Sparkle.svg";
+import Hero_Union from "../../../public/assets/Union.svg";
 import Image from "next/image";
 export default function SectionTryNow() {
   return (
-    <section className="w-full bg-[#0f172a]">
+    <section className="relative w-full bg-[#0f172a]">
+      {/* Decorative unions - match hero positions */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-6 opacity-60 hidden md:block md:right-24 md:top-32"
+      >
+        <Image src={Hero_Union} alt="Union" />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-0 opacity-60 hidden md:block md:left-0 md:top-0"
+      >
+        <Image src={Hero_Union} alt="Union" />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[-20px] bottom-6 opacity-60 md:left-16 md:top-[380px]"
+      >
+        <Image src={Hero_Union} alt="Union" />
+      </div>
       <div className="mx-auto max-w-[1216px] px-4 pt-70 pb-70 text-center md:px-28">
         <h2 className="bg-gradient-to-r from-white to-[#e762ff] bg-clip-text text-transparent text-[32px] font-bold tracking-tight md:text-6xl md:leading-[68px] font-['Plus Jakarta Sans',sans-serif]">
           Try Now!
