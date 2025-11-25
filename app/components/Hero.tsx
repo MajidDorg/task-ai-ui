@@ -31,15 +31,15 @@ export default function Hero() {
       >
         <Image src={Hero_Union} alt="Union" />
       </div>
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-16 md:min-h-[900px] md:px-28 md:py-24">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 pt-0 pb-16 md:min-h-[900px] md:px-28 md:py-24">
         <div className="flex max-w-3xl flex-col items-center gap-4 text-center md:gap-6">
-          <h1 className="pt-40 text-3xl font-bold tracking-tight md:text-6xl md:leading-[68px] font-['Plus Jakarta Sans',sans-serif]">
+          <h1 className="pt-40 md:pt-0 text-3xl font-bold tracking-tight md:text-6xl md:leading-[68px] font-['Plus Jakarta Sans',sans-serif]">
             <RotatingTitle
               maxLines={3}
               className="bg-linear-to-r from-white to-[#e762ff] bg-clip-text text-transparent"
             />
           </h1>
-          <p className="pb-6 mx-auto max-w-[343px] text-center text-balance text-base leading-[1.6] text-shade-off font-['Plus Jakarta Sans',sans-serif] md:max-w-[717.235px] md:text-xl">
+          <p className="mx-auto max-w-[343px] text-center text-balance text-base leading-[1.6] text-shade-off font-['Plus Jakarta Sans',sans-serif] md:max-w-[717.235px] md:text-xl">
             Use thehandover.ai to search and analyse your next project.
           </p>
         </div>
