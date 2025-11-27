@@ -11,7 +11,7 @@ import Footer_Background from "../../../public/assets/footer_card_background.jpe
 export default function SectionFooterCta() {
   return (
     <section className="w-full bg-[#0f172a]">
-      <div className="mx-auto max-w-[1216px] px-0 pt-24 pb-0 md:px-28 md:py-24">
+      <div className="mx-auto max-w-[1440px] px-0 pt-24 pb-0 md:px-28 md:py-24">
         <div className="relative mx-auto w-full overflow-hidden rounded-t-none rounded-b-[24px] px-4 py-16 md:px-[112px] md:py-[96px]">
           {/* background with image and overlay */}
           <div aria-hidden className="pointer-events-none absolute inset-0">

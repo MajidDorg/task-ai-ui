@@ -14,6 +14,11 @@ type RotatingTitleProps = {
   maxLines?: number;
 };
 
+// Small vertical buffer to prevent rare glyph clipping due to
+// subpixel rounding and transform compositing during animations.
+const DESCENDER_FUDGE_PX = 2;
+const FIT_TOLERANCE_PX = 1.5;
+
 const MESSAGES = [
   "Construction Due Diligence With AI",
   "The AI CoPilot To Plan, Budget, Build Your Next Project!",
@@ -58,7 +63,9 @@ export default function RotatingTitle({
       // If maxLines provided, auto-fit the font size so text fits within maxLines.
       if (maxLines) {
         // Get current computed styles
-        measurer.textContent = "A";
+        // Use a glyph pair that includes both ascender/descender to reflect
+        // the real line box height more accurately across messages.
+        measurer.textContent = "Ag";
         measurer.style.fontSize = "";
         const computed = window.getComputedStyle(measurer);
         const baseFontSize = parseFloat(computed.fontSize || "24");
@@ -68,7 +75,7 @@ export default function RotatingTitle({
           measurer.offsetHeight ||
           parseFloat(computed.lineHeight || "0") ||
           baseFontSize * 1.2;
-        const clampHeight = singleLineHeight * maxLines;
+        const clampHeight = singleLineHeight * maxLines + DESCENDER_FUDGE_PX;
 
         // Binary search the largest font-size that fits the current message within clamp height
         const fitForText = (msg: string) => {
@@ -79,7 +86,7 @@ export default function RotatingTitle({
             measurer.style.fontSize = `${mid}px`;
             measurer.textContent = msg;
             const h = measurer.scrollHeight;
-            if (h <= clampHeight + 0.5) {
+            if (h <= clampHeight + FIT_TOLERANCE_PX) {
               low = mid; // fits, try bigger
             } else {
               high = mid; // too big
@@ -101,7 +108,7 @@ export default function RotatingTitle({
         const h = measurer.offsetHeight;
         if (h > maxH) maxH = h;
       }
-      setContainerHeight(maxH);
+      setContainerHeight(maxH + DESCENDER_FUDGE_PX);
     };
 
     compute();
@@ -156,6 +163,8 @@ export default function RotatingTitle({
             backgroundPosition: "center",
             backgroundSize: "cover",
             WebkitTextFillColor: "transparent",
+            // Prevent rare bottom clipping of descenders on some phrases/browsers
+            paddingBottom: `${DESCENDER_FUDGE_PX}px`,
             ...(fittedFontSize ? { fontSize: `${fittedFontSize}px` } : {}),
           }}
         >
@@ -172,6 +181,7 @@ export default function RotatingTitle({
           // Ensure the measurer wraps exactly like the visible text
           whiteSpace: "normal",
           wordBreak: "break-word",
+          paddingBottom: `${DESCENDER_FUDGE_PX}px`,
         }}
       />
     </div>
