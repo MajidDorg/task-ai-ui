@@ -10,3 +10,21 @@
   --color-brand-30: #a5b4fc; /* Brand/30 */
   --color-gray-50: #64748b; /* Gray/50 (used for placeholders) */
 }
+
+/* Desktop-only overall scale down to make UI feel less oversized on 13–15" screens */
+@media (min-width: 1024px) {
+  .desktop-shrink {
+    zoom: 0.65; /* Chrome/Edge/Safari */
+  }
+}
+
+/* Firefox fallback for the same effect */
+@-moz-document url-prefix() {
+  @media (min-width: 1024px) {
+    .desktop-shrink {
+      zoom: 1; /* neutralize zoom in Firefox */
+      transform: scale(0.65);
+      transform-origin: top center;
+    }
+  }
+}

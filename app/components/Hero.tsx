@@ -11,7 +11,7 @@ import Hero_Icon_Container from "../../public/assets/Hero_Icon Container.svg";
 
 export default function Hero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-[#0f172a]">
+    <section className="relative w-full overflow-hidden bg-[#0f172a]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-6 opacity-60 md:right-24 md:top-32"
@@ -31,7 +31,7 @@ export default function Hero() {
       >
         <Image src={Hero_Union} alt="Union" />
       </div>
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 pt-0 pb-16 md:min-h-[900px] md:px-28 md:py-24">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 pt-0 pb-16 md:min-h-[900px] md:px-28 md:py-12">
         <div className="flex max-w-3xl flex-col items-center gap-4 text-center md:gap-6">
           <h1 className="pt-40 md:pt-0 text-3xl font-bold tracking-tight md:text-6xl md:leading-[68px] font-['Plus Jakarta Sans',sans-serif]">
             <RotatingTitle

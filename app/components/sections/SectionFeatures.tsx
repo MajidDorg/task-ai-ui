@@ -25,7 +25,7 @@ function ArrowRight() {
 export default function SectionFeatures() {
   return (
     <section className="w-full bg-[#0f172a]">
-      <div className="mx-auto max-w-7xl px-4 py-6 md:px-28 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 py-6 md:px-28 md:pt-0 md:pb-24">
         {/* Heading */}
         <div className="mb-12 flex flex-col items-center gap-4 text-center md:mb-16">
           <span className="rounded-full border border-indigo-300 bg-white px-4 py-1 text-[14px] font-semibold text-[#4F46E5] md:px-6 md:py-1.5 md:text-sm font-['Plus Jakarta Sans',sans-serif]">

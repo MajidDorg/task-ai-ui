@@ -6,7 +6,7 @@ import ArrowRight from "../../public/assets/Header_ArrowRight.svg";
 export default function Header() {
   return (
     <header className="w-full bg-[#0f172a]">
-      <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4 md:py-5">
+      <div className="flex items-center justify-between px-6 py-4 md:py-5">
         <div className="flex items-center gap-2 md:gap-4">
           <div className="flex items-center gap-2">
             <span>
@@ -32,7 +32,7 @@ export default function Header() {
         </div>
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-full bg-success-60 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:px-5 md:py-3 md:text-[18px]"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#16A34A] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 md:px-5 md:py-3 md:text-[18px]"
         >
           <span>Sign Up</span>
           <span aria-hidden="true" className="hidden md:inline">
