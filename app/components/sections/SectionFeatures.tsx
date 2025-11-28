@@ -39,11 +39,11 @@ export default function SectionFeatures() {
         {/* Row 1 */}
         <div className="grid justify-items-center items-start md:items-center gap-8 md:grid-cols-2 md:gap-24 md:justify-items-start md:mt-12">
           {/* Image card (Figma 1-4955 exact composition with dimensions) */}
-          <div className="relative mx-auto overflow-hidden w-[343px] aspect-square md:w-full md:max-w-[627.75px] rounded-[18.485px] md:rounded-[32px] border border-white/10 bg-[#081534] md:justify-self-start">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] w-full aspect-square md:max-w-[627.75px] md:justify-self-start">
             {/* background luminosity grid/image could go here if you add the asset */}
 
             {/* Inner message group (card + chip + approved) positioned as a block */}
-            <div className="absolute left-[41px] top-[130px] w-[270.744px] md:left-1/2 md:top-1/2 md:w-[404px] md:-translate-x-1/2 md:-translate-y-1/2 relative">
+            <div className="absolute left-1/2 top-1/2 w-[68%] -translate-x-1/2 -translate-y-1/2">
               {/* Card */}
               <div className="rounded-[16px] md:rounded-[24px] border border-white/10 bg-[#263149] p-[12px] md:p-5 shadow-[0_40px_80px_rgba(0,0,0,0.25)]">
                 <div className="flex items-center gap-3">

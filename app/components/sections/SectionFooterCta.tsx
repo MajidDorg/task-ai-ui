@@ -8,9 +8,34 @@ import Footer_X_Vector from "../../../public/assets/Footer_X_Vector.svg";
 import Footer_Instagram_Vector from "../../../public/assets/Footer_Instagram_Vector.svg";
 import Footer_Linkedin_Vector from "../../../public/assets/Footer_Linkedin_Vector.svg";
 import Footer_Background from "../../../public/assets/footer_card_background.jpeg";
+import TryNow_Union from "../../../public/assets/TryNow_Union.svg";
 export default function SectionFooterCta() {
   return (
-    <section className="w-full bg-[#0f172a]">
+    <section className="relative w-full bg-[#0f172a]">
+      {/* Decorative unions pinned to the section corners (not just the card) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[-80px] top-[-140px] opacity-60 hidden md:block md:left-[-120px] md:top-[-200px]"
+      >
+        <Image
+          src={TryNow_Union}
+          alt="Union"
+          className="rotate-90"
+          style={{ clipPath: "inset(50% 0 0 0)" }}
+        />
+      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-80px] top-[-140px] opacity-60 hidden md:block md:right-[-120px] md:top-[-200px]"
+      >
+        <Image
+          src={TryNow_Union}
+          alt="Union"
+          className="rotate-90"
+          style={{ clipPath: "inset(50% 0 0 0)" }}
+        />
+      </div>
+
       <div className="mx-auto max-w-[1440px] px-0 pt-24 pb-0 md:px-28 md:py-24">
         <div className="relative mx-auto w-full overflow-hidden rounded-t-none rounded-b-[24px] px-4 py-16 md:px-[112px] md:py-[96px]">
           {/* background with image and overlay */}
@@ -28,7 +53,6 @@ export default function SectionFooterCta() {
               }}
             />
           </div>
-
           <div className="relative grid gap-10 md:grid-cols-[1fr_auto] md:items-start md:gap-16">
             {/* left content */}
             <div className="text-shade-on">
