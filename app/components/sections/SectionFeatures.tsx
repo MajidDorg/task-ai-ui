@@ -24,22 +24,22 @@ function ArrowRight() {
 
 export default function SectionFeatures() {
   return (
-    <section className="w-full bg-[#0f172a]">
-      <div className="mx-auto max-w-7xl px-4 py-6 md:px-28 md:pt-0 md:pb-24">
+    <section className="w-full bg-[#0f172a] section-y">
+      <div className="page-container">
         {/* Heading */}
         <div className="mb-12 flex flex-col items-center gap-4 text-center md:mb-16">
-          <span className="rounded-full border border-indigo-300 bg-white px-4 py-1 text-[14px] font-semibold text-[#4F46E5] md:px-6 md:py-1.5 md:text-sm font-['Plus Jakarta Sans',sans-serif]">
+          <span className="rounded-full border border-indigo-300 bg-white px-2 py-0.5 text-[10px] font-semibold text-[#4F46E5] md:px-2.5 md:py-0.5 md:text-[11px] font-['Plus Jakarta Sans',sans-serif]">
             Features of TheHandover AI
           </span>
-          <h2 className="bg-linear-to-r from-[#ffffff] to-[#e762ff] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl md:leading-[68px]">
+          <h2 className="bg-linear-to-r from-shade-on to-[#e762ff] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-[40px] md:leading-[52px]">
             Say goobye to unecessary hard work.
           </h2>
         </div>
 
         {/* Row 1 */}
-        <div className="grid justify-items-center items-start md:items-center gap-8 md:grid-cols-2 md:gap-24 md:justify-items-start md:mt-12">
+        <div className="grid justify-items-center items-start md:items-center gap-8 md:grid-cols-2 md:gap-16 md:justify-items-start md:mt-12">
           {/* Image card (Figma 1-4955 exact composition with dimensions) */}
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] w-full aspect-square md:max-w-[627.75px] md:justify-self-start">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] w-full aspect-square md:max-w-[520px] md:justify-self-start">
             {/* background luminosity grid/image could go here if you add the asset */}
 
             {/* Inner message group (card + chip + approved) positioned as a block */}
@@ -58,7 +58,7 @@ export default function SectionFeatures() {
                   </span>
                 </div>
                 <div className="mt-3 space-y-3 md:mt-4">
-                  <div className="h-3 w-[88%] rounded-full bg-[#334060]" />
+                  <div className="h-3 w-[92%] rounded-full bg-[#334060]" />
                   <div className="h-3 w-[92%] rounded-full bg-[#334060]" />
                   <div className="h-3 w-[64%] rounded-full bg-[#334060]" />
                 </div>
@@ -96,24 +96,24 @@ export default function SectionFeatures() {
             </div>
           </div>
           {/* Text */}
-          <div className="flex min-w-0 w-[343px] md:w-full md:max-w-[560px] flex-col gap-5 items-start text-left mx-auto md:mx-0 pl-5">
-            <h3 className="text-2xl font-bold tracking-tight text-shade-on lg:text-2xl lg:leading-[32px] font-['Plus Jakarta Sans',sans-serif]">
+          <div className="flex min-w-0 w-full md:max-w-[560px] flex-col gap-5 items-start text-left mx-auto md:mx-0">
+            <h3 className="text-xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[30px] font-['Plus Jakarta Sans',sans-serif]">
               AI-powered construction due diligence.
             </h3>
-            <p className="text-[16px] leading-[1.6] text-shade-off font-['Plus Jakarta Sans',sans-serif]">
+            <p className="text-base leading-[1.6] text-shade-off font-['Plus Jakarta Sans',sans-serif]">
               Decide go/no go on your next project faster than ever before, by
               answering questions like:
             </p>
             <ul className="flex flex-col gap-3">
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>What can I build or what is allowed to be built?</span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>What will the cost to build be?</span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>What is the market rate to sell once built?</span>
               </li>
@@ -129,29 +129,29 @@ export default function SectionFeatures() {
         </div>
 
         {/* Row 2 */}
-        <div className="mt-16 grid items-center gap-8 md:mt-24 md:grid-cols-2 md:gap-24">
+        <div className="mt-16 grid items-center gap-8 md:mt-16 md:grid-cols-2 md:gap-16">
           {/* Text */}
-          <div className="order-2 flex flex-col gap-5 md:order-1 pl-5">
-            <h3 className="text-2xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[38px]">
+          <div className="order-2 flex flex-col gap-5 md:order-1">
+            <h3 className="text-xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[30px]">
               Generate takeoff estimates. Build vendor scopes in seconds.
             </h3>
-            <p className="text-[18px] leading-[1.6] text-shade-off">
+            <p className="text-base leading-[1.6] text-shade-off">
               Upload your drawings, PDFs, or material schedules — TheHandover AI
               reads them, calculates takeoff quantities, and drafts scope
               outlines ready to send to vendors or subcontractors.
             </p>
             <ul className="flex flex-col gap-3">
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>Convert PDFs or CAD exports into itemized takeoffs.</span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>
                   Produce trade-specific scope docs with cost benchmarks.
                 </span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>Flag high-variance items against market pricing.</span>
               </li>
@@ -165,7 +165,7 @@ export default function SectionFeatures() {
             </button>
           </div>
           {/* Image card */}
-          <div className="order-1 relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] md:order-2">
+          <div className="order-1 relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] md:order-2 md:max-w-[520px]">
             <Image
               src={Features_Frame}
               alt="Features_Frame"
@@ -177,9 +177,9 @@ export default function SectionFeatures() {
         </div>
 
         {/* Block 3: Image Left, Text Right */}
-        <div className="mt-16 grid items-center gap-8 md:mt-24 md:grid-cols-2 md:gap-24">
+        <div className="mt-16 grid items-center gap-8 md:mt-16 md:grid-cols-2 md:gap-16">
           {/* Image card (diagram) */}
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534]">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] md:max-w-[520px]">
             <Image
               src={Features_Frame_2}
               alt="Features_Frame_2"
@@ -189,26 +189,26 @@ export default function SectionFeatures() {
             />
           </div>
           {/* Text */}
-          <div className="flex flex-col gap-5 pl-5">
-            <h3 className="text-2xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[38px]">
+          <div className="flex flex-col gap-5">
+            <h3 className="text-xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[30px]">
               Simplify construction loans and project financing.
             </h3>
-            <p className="text-[18px] leading-[1.6] text-shade-off">
+            <p className="text-base leading-[1.6] text-shade-off">
               Make your proforma with our AI solution or convert what you have
               into a project, add and post to our marketplace
             </p>
             <ul className="flex flex-col gap-3">
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>
                   Compare financing scenarios (bridge vs. construction loan).
                 </span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>Identify equity gaps and blended cost of capital.</span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>Match with verified lenders ready to fund.</span>
               </li>
@@ -224,31 +224,31 @@ export default function SectionFeatures() {
         </div>
 
         {/* Block 4: Text Left, Image Right */}
-        <div className="mt-16 grid items-center gap-8 md:mt-24 md:grid-cols-2 md:gap-24">
+        <div className="mt-16 grid items-center gap-8 md:mt-16 md:grid-cols-2 md:gap-16">
           {/* Text */}
-          <div className="order-2 flex flex-col gap-5 md:order-1 pl-5">
-            <h3 className="text-2xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[38px]">
+          <div className="order-2 flex flex-col gap-5 md:order-1">
+            <h3 className="text-xl font-bold tracking-tight text-shade-on md:text-2xl md:leading-[30px]">
               Build cost and market analysis through AI reporting.
             </h3>
-            <p className="text-[18px] leading-[1.6] text-shade-off">
+            <p className="text-base leading-[1.6] text-shade-off">
               TheHandover AI’s finance engine models your total capital stack,
               repayment schedules, and expected ROI automatically. Adjust your
               assumptions and watch updated forecasts in real time.
             </p>
             <ul className="flex flex-col gap-3">
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>
                   Auto-calculate LTV, DSCR, and IRR from uploaded proformas.
                 </span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>
                   Simulate loan terms and repayment impact on returns.
                 </span>
               </li>
-              <li className="flex items-center gap-3 text-[18px] text-slate-200">
+              <li className="flex items-center gap-3 text-[16px] text-slate-200">
                 <CheckBullet />
                 <span>
                   Export full financing summary for lenders or investors.
@@ -264,7 +264,7 @@ export default function SectionFeatures() {
             </button>
           </div>
           {/* Image card (bar chart) */}
-          <div className="order-1 relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] md:order-2">
+          <div className="order-1 relative overflow-hidden rounded-3xl border border-white/10 bg-[#081534] md:order-2 md:max-w-[520px]">
             <Image
               src={Features_Frame_3}
               alt="Features_Frame_3"

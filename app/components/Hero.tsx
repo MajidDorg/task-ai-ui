@@ -1,45 +1,50 @@
 "use client";
 
 import Hero_Sparkle from "../../public/assets/Hero_Button.svg";
-import Hero_Union from "../../public/assets/Union.svg";
 import file_attachment_icon from "../../public/assets/Hero_Button Icon.svg";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import RotatingTitle from "./RotatingTitle";
 import Hero_Microphone_Icon from "../../public/assets/Hero_Microphone_Icon.svg";
 import Hero_Icon_Container from "../../public/assets/Hero_Icon Container.svg";
+import Hero_Union_1 from "../../public/assets/Hero_Union_1.svg";
+import Hero_Union_2 from "../../public/assets/Hero_Union_2.svg";
+import Hero_Union_3 from "../../public/assets/Hero_Union_3.svg";
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#0f172a]">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-6 opacity-60 md:right-24 md:top-32"
-      >
-        <Image src={Hero_Union} alt="Union" />
+    <section className="relative w-full overflow-hidden bg-[#0f172a] section-y pt-40">
+      {/* Anchor decorative unions to the page container width */}
+      <div className="page-container relative pointer-events-none">
+        <div
+          aria-hidden="true"
+          className="absolute right-6 opacity-60 md:right-[12px] md:top-[32px]"
+        >
+          <Image src={Hero_Union_2} alt="Union" />
+        </div>
+        <div
+          aria-hidden="true"
+          className="absolute hidden opacity-60 md:left-[-10px] md:top-[-50px] md:block"
+        >
+          <Image src={Hero_Union_1} alt="Union" />
+        </div>
+        {/* Static decorative union under the white box, fixed position */}
+        <div
+          aria-hidden="true"
+          className="absolute left-[-120px] top-[520px] opacity-60 md:left-16 md:top-[420px]"
+        >
+          <Image src={Hero_Union_3} alt="Union" />
+        </div>
       </div>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute hidden opacity-60 md:left-0 md:top-0 md:block"
-      >
-        <Image src={Hero_Union} alt="Union" />
-      </div>
-      {/* Static decorative union under the white box, fixed position */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[-120px] top-[520px] opacity-60 md:left-16 md:top-[620px]"
-      >
-        <Image src={Hero_Union} alt="Union" />
-      </div>
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 pt-0 pb-16 md:min-h-[900px] md:px-28 md:py-12">
-        <div className="flex max-w-3xl flex-col items-center gap-4 text-center md:gap-6">
-          <h1 className="pt-40 md:pt-0 text-3xl font-bold tracking-tight md:text-6xl md:leading-[68px] pb-[2px] font-['Plus Jakarta Sans',sans-serif]">
+      <div className="page-container mx-auto flex flex-col items-center text-center md:min-h-[640px]">
+        <div className="flex max-w-3xl flex-col items-center gap-4 md:gap-6">
+          <h1 className="pt-6 md:pt-10 text-3xl leading-tight font-bold tracking-tight md:text-[38px] md:leading-[58px] pb-[2px] font-['Plus Jakarta Sans',sans-serif]">
             <RotatingTitle
               maxLines={3}
               className="bg-linear-to-r from-white to-[#e762ff] bg-clip-text text-transparent"
             />
           </h1>
-          <p className="mx-auto max-w-[343px] text-center text-balance text-base leading-[1.6] text-shade-off font-['Plus Jakarta Sans',sans-serif] md:max-w-[717.235px] md:text-xl">
+          <p className="mx-auto max-w-[68ch] -mt-1 md:-mt-6 text-center text-balance text-sm leading-[1.6] text-shade-off font-['Plus Jakarta Sans',sans-serif] md:text-[14px]">
             Use thehandover.ai to search and analyse your next project.
           </p>
         </div>
@@ -86,12 +91,17 @@ function HeroChatInput() {
     ? "border-slate-300 shadow-[0_0_0_4px_rgba(148,163,184,0.15)]"
     : "border-slate-200";
 
+  // Narrower when collapsed, a bit wider when expanded
+  const collapsedWidthClass = "max-w-[680px]";
+  const expandedWidthClass = "max-w-[680px]";
+  const widthClass = uiExpanded ? expandedWidthClass : collapsedWidthClass;
+
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Helper to compute compact height responsive
   const getCompactHeight = () => {
-    return window.matchMedia("(min-width: 768px)").matches ? 64 : 56;
+    return window.matchMedia("(min-width: 768px)").matches ? 56 : 48;
   };
 
   // When first character is typed, move focus to textarea seamlessly
@@ -101,11 +111,7 @@ function HeroChatInput() {
       const len = textAreaRef.current.value.length;
       textAreaRef.current.setSelectionRange(len, len);
     }
-    // Keep expanded layout while there is content
-    if (value.length > 0 && !uiExpanded) {
-      setUiExpanded(true);
-    }
-  }, [value, uiExpanded]);
+  }, [value]);
 
   // Removed auto-focus jump on clear to avoid stealing last keypress during collapse
 
@@ -459,10 +465,10 @@ function HeroChatInput() {
   };
 
   return (
-    <div className="pb-30 mt-6 w-full max-w-6xl md:mt-12">
+    <div className="pb-30 mt-10 w-full max-w-6xl md:mt-16">
       <div
         ref={animWrapRef}
-        className={`relative z-0 ${wrapperState} ${
+        className={`relative z-0 ${widthClass} mx-auto ${wrapperState} ${
           uiExpanded ? "rounded-[30px]" : "rounded-[50px]"
         } bg-white border`}
         style={{
@@ -499,18 +505,18 @@ function HeroChatInput() {
           {(!uiExpanded || isCollapsing) && (
             <form
               ref={preFormRef}
-              className={`${wrapperBase} h-[56px] md:h-[64px] ${
+              className={`${wrapperBase} h-[48px] md:h-[56px] ${
                 uiExpanded && isCollapsing
                   ? "opacity-100"
                   : !uiExpanded
                   ? "opacity-100"
                   : "opacity-0"
-              } transition-opacity duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]`}
+              } transition-opacity duration-420 ease-[cubic-bezier(0.22,1,0.36,1)]`}
               onSubmit={(e) => e.preventDefault()}
             >
               <div
                 ref={preContentRef}
-                className="flex h-full items-center gap-3 pl-5 pr-2 md:gap-4 md:pl-6"
+                className="flex h-full items-center gap-3 pl-4 pr-2 md:gap-4 md:pl-5"
               >
                 <button
                   ref={preAttachRef}
@@ -536,12 +542,12 @@ function HeroChatInput() {
                   onBlur={() => setFocused(false)}
                   placeholder="Ask me anything..."
                   aria-label="Ask me anything"
-                  className="min-w-0 flex-1 bg-transparent text-[16px] md:text-[20px] leading-tight text-[#64748b] placeholder-[#64748b] outline-none font-['Plus_Jakarta_Sans',sans-serif]"
+                  className="min-w-0 flex-1 bg-transparent text-[16px] md:text-[18px] leading-tight text-gray-50 placeholder-gray-50 outline-none font-['Plus_Jakarta_Sans',sans-serif]"
                 />
                 <button
                   ref={preSendRef}
                   type="submit"
-                  className="inline-flex h-10 w-16 items-center justify-center rounded-full bg-success-60 text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30 md:h-10 md:w-14"
+                  className="inline-flex h-8 w-10 items-center justify-center rounded-full bg-success-60 text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30 md:h-8 md:w-10"
                   aria-label="Run"
                 >
                   <Image
@@ -561,7 +567,7 @@ function HeroChatInput() {
               ref={postFormRef}
               className={`${wrapperBase} ${
                 isCollapsing ? "opacity-0" : "opacity-100"
-              } transition-opacity duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]`}
+              } transition-opacity duration-420 ease-[cubic-bezier(0.22,1,0.36,1)]`}
               onSubmit={(e) => e.preventDefault()}
             >
               <div ref={postTopRef} className="px-4 pt-4 md:px-5 md:pt-5">
@@ -574,7 +580,7 @@ function HeroChatInput() {
                   placeholder="Ask me anything..."
                   aria-label="Ask me anything"
                   rows={2}
-                  className="min-h-[48px] w-full resize-none bg-transparent text-[16px] leading-[22px] text-black placeholder-[#64748b] outline-none font-['Plus_Jakarta_Sans',sans-serif] md:min-h-[56px] md:text-[24px] md:leading-[28px]"
+                  className="min-h-[48px] w-full resize-none bg-transparent text-[16px] leading-[22px] text-black placeholder-gray-50 outline-none font-['Plus_Jakarta_Sans',sans-serif] md:min-h-[56px] md:text-[24px] md:leading-[28px]"
                 />
               </div>
               {isDraggingOver && (

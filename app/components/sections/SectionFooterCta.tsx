@@ -8,40 +8,31 @@ import Footer_X_Vector from "../../../public/assets/Footer_X_Vector.svg";
 import Footer_Instagram_Vector from "../../../public/assets/Footer_Instagram_Vector.svg";
 import Footer_Linkedin_Vector from "../../../public/assets/Footer_Linkedin_Vector.svg";
 import Footer_Background from "../../../public/assets/footer_card_background.jpeg";
-import TryNow_Union from "../../../public/assets/TryNow_Union.svg";
+import Footer_Union_1 from "../../../public/assets/Footer_Union_1.svg";
+import Try_Now_Union_1 from "../../../public/assets/Try_Now_Union_1.svg";
 export default function SectionFooterCta() {
   return (
-    <section className="relative w-full bg-[#0f172a]">
+    <section className="relative w-full bg-[#0f172a] section-y">
       {/* Decorative unions pinned to the section corners (not just the card) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-[-80px] top-[-140px] opacity-60 hidden md:block md:left-[-120px] md:top-[-200px]"
+        className="pointer-events-none absolute left-[-80px] top-[-140px] opacity-60 hidden md:block md:left-[-10px] md:top-[-50px]"
       >
-        <Image
-          src={TryNow_Union}
-          alt="Union"
-          className="rotate-90"
-          style={{ clipPath: "inset(50% 0 0 0)" }}
-        />
+        <Image src={Footer_Union_1} alt="Union" />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-80px] top-[-140px] opacity-60 hidden md:block md:right-[-120px] md:top-[-200px]"
+        className="pointer-events-none absolute right-[-80px] top-[-140px] opacity-60 hidden md:block md:right-[-10px] md:top-[-20px]"
       >
-        <Image
-          src={TryNow_Union}
-          alt="Union"
-          className="rotate-90"
-          style={{ clipPath: "inset(50% 0 0 0)" }}
-        />
+        <Image src={Try_Now_Union_1} alt="Union" />
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-0 pt-24 pb-0 md:px-28 md:py-24">
-        <div className="relative mx-auto w-full overflow-hidden rounded-t-none rounded-b-[24px] px-4 py-16 md:px-[112px] md:py-[96px]">
+      <div className="page-container">
+        <div className="relative mx-auto w-full max-w-[1200px] md:max-w-[1200px] overflow-hidden rounded-[16px] px-10 py-12 md:px-16 md:py-14">
           {/* background with image and overlay */}
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <div
-              className="absolute inset-0 rounded-t-none rounded-b-[24px] md:rounded-[24px]"
+              className="absolute inset-0 rounded-[16px]"
               style={{
                 background:
                   "linear-gradient(0deg, rgba(16, 13, 77, 0.64) 0%, rgba(16, 13, 77, 0.64) 100%), url(" +
@@ -66,11 +57,11 @@ export default function SectionFooterCta() {
                   src={Footer_The_Handover_Logo_desktop}
                   alt="Footer The Handover Logo"
                   className="hidden md:block"
-                  width={466}
-                  height={82.3}
+                  width={320}
+                  height={57}
                 />
               </div>
-              <p className="mt-4 md:mt-6 md:max-w-2xl text-[18px] leading-[160%] font-normal text-[var(--Gray-30,#CBD5E1)] font-['Plus Jakarta Sans',sans-serif]">
+              <p className="mt-3 md:mt-5 md:max-w-2xl text-[13px] md:text-[15px] leading-[160%] font-normal text-shade-off font-['Plus Jakarta Sans',sans-serif]">
                 Secured. Verified. Built for ROI — powered by AI to redefine
                 construction finance.
               </p>
@@ -87,7 +78,7 @@ export default function SectionFooterCta() {
               </div>
 
               {/* Links */}
-              <div className="mt-8 grid grid-cols-1 gap-6 text-[16px] font-semibold text-[#F1F5F9] md:mt-10 md:grid-cols-2 md:flex md:flex-wrap md:gap-8 font-['Plus Jakarta Sans',sans-serif]">
+              <div className="mt-8 grid grid-cols-1 gap-6 text-[14px] font-semibold text-[#F1F5F9] md:mt-10 md:grid-cols-2 md:flex md:flex-wrap md:gap-8 font-['Plus Jakarta Sans',sans-serif]">
                 <a className="hover:opacity-90" href="#">
                   Back to Top
                 </a>
@@ -122,7 +113,7 @@ export default function SectionFooterCta() {
             <div className="hidden md:flex md:justify-end">
               <button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-full bg-success-60 px-8 py-4 font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                className="inline-flex items-center gap-2 rounded-full bg-success-60 px-5 py-2 text-sm font-bold text-white transition-colors hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 Sign Up{" "}
                 <span aria-hidden>
@@ -135,25 +126,36 @@ export default function SectionFooterCta() {
             </div>
           </div>
 
-          <hr className="relative z-1 mt-16 border-t border-white/50" />
+          <hr className="relative z-1 mt-10 border-t border-white/50" />
 
           <div className="relative mt-6 w-full flex flex-col items-center justify-between gap-6 text-white/90 md:flex-row">
             <div className="flex items-center gap-6 order-1 md:order-2">
               <Image
                 src={Footer_Facebook_Vector}
                 alt="Footer Facebook Vector"
+                width={18}
+                height={18}
               />
-              <Image src={Footer_X_Vector} alt="Footer X Vector" />
+              <Image
+                src={Footer_X_Vector}
+                alt="Footer X Vector"
+                width={18}
+                height={18}
+              />
               <Image
                 src={Footer_Instagram_Vector}
                 alt="Footer Instagram Vector"
+                width={18}
+                height={18}
               />
               <Image
                 src={Footer_Linkedin_Vector}
                 alt="Footer Linkedin Vector"
+                width={18}
+                height={18}
               />
             </div>
-            <p className="text-center text-[14px] font-medium leading-[20px] tracking-[-0.084px] text-[var(--Gray-40,#94A3B8)] font-['Plus Jakarta Sans',sans-serif] order-2 md:order-1">
+            <p className="text-center text-[12px] md:text-[13px] font-medium leading-[20px] tracking-[-0.084px] text-shade-off font-['Plus Jakarta Sans',sans-serif] order-2 md:order-1">
               Copyright 2025 © The Handover, All Rights Reserved.
             </p>
           </div>

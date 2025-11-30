@@ -20,11 +20,11 @@ const DESCENDER_FUDGE_PX = 2;
 const FIT_TOLERANCE_PX = 1.5;
 
 const MESSAGES = [
-  "Construction Due Diligence With AI",
-  "The AI CoPilot To Plan, Budget, Build Your Next Project!",
+  "Construction Due\nDiligence With AI",
+  "The AI CoPilot To Plan, Budget,\nBuild Your Next Project!",
   "Ask Anything...",
-  "Upload Your Files or Let Your AI Create Them For You",
-  "Convert Your Proforma Into A Project On Our Marketplace, Publish It And Find Investors!",
+  "Upload Your Files Or Let Your AI\nCreate Them For You",
+  "Convert Your Proforma Into A\nProject On Our Marketplace,\nPublish It And Find Investors!",
 ];
 
 export default function RotatingTitle({
@@ -84,7 +84,7 @@ export default function RotatingTitle({
           for (let i = 0; i < 12; i++) {
             const mid = (low + high) / 2;
             measurer.style.fontSize = `${mid}px`;
-            measurer.textContent = msg;
+            measurer.innerHTML = msg.replace(/\n/g, "<br/>");
             const h = measurer.scrollHeight;
             if (h <= clampHeight + FIT_TOLERANCE_PX) {
               low = mid; // fits, try bigger
@@ -104,7 +104,7 @@ export default function RotatingTitle({
       // Default behavior: lock to tallest message height
       let maxH = 0;
       for (const msg of MESSAGES) {
-        measurer.textContent = msg;
+        measurer.innerHTML = msg.replace(/\n/g, "<br/>");
         const h = measurer.offsetHeight;
         if (h > maxH) maxH = h;
       }
@@ -168,7 +168,12 @@ export default function RotatingTitle({
             ...(fittedFontSize ? { fontSize: `${fittedFontSize}px` } : {}),
           }}
         >
-          {text}
+          {text.split("\n").map((part, i, arr) => (
+            <React.Fragment key={i}>
+              {part}
+              {i < arr.length - 1 ? <br /> : null}
+            </React.Fragment>
+          ))}
         </span>
       </AnimatedContent>
       {/* invisible measurer to lock height to tallest message */}
