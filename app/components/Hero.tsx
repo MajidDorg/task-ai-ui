@@ -530,7 +530,7 @@ function HeroChatInput() {
                     alt="Attachment"
                     width={24}
                     height={24}
-                    className="h-6 w-6 md:h-[18px] md:w-[18px]"
+                    className="h-6 w-6 md:h-[36px] md:w-[36px]"
                   />
                 </button>
                 <input
@@ -630,7 +630,7 @@ function HeroChatInput() {
                     alt="Sparkle"
                     width={24}
                     height={24}
-                    className="h-6 w-6 md:h-[18px] md:w-[18px]"
+                    className="h-6 w-6 md:h-[36px] md:w-[36px]"
                   />
                 </button>
                 <div className="flex items-center gap-3 md:gap-4">
@@ -644,7 +644,7 @@ function HeroChatInput() {
                       alt="Microphone"
                       width={24}
                       height={24}
-                      className="h-6 w-6 md:h-[18px] md:w-[18px]"
+                      className="h-6 w-6 md:h-[36px] md:w-[36px]"
                     />
                   </button>
                   <button
