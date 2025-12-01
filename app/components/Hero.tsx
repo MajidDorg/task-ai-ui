@@ -13,7 +13,7 @@ import Hero_Union_3 from "../../public/assets/Hero_Union_3.svg";
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#0f172a] section-y pt-40">
+    <section className="relative w-full overflow-hidden bg-[#0f172a] section-y pt-30">
       {/* Anchor decorative unions to the page container width */}
       <div className="page-container relative pointer-events-none">
         <div
@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
       <div className="page-container mx-auto flex flex-col items-center text-center md:min-h-[640px]">
         <div className="flex max-w-3xl flex-col items-center gap-4 md:gap-6">
-          <h1 className="pt-6 md:pt-10 text-3xl leading-tight font-bold tracking-tight md:text-[38px] md:leading-[58px] pb-[2px] font-['Plus Jakarta Sans',sans-serif]">
+          <h1 className="pt-6 md:pt-10 text-[26px] leading-tight font-bold tracking-tight md:text-[48px] md:leading-[58px] pb-[2px] font-['Plus Jakarta Sans',sans-serif]">
             <RotatingTitle
               maxLines={3}
               className="bg-linear-to-r from-white to-[#e762ff] bg-clip-text text-transparent"
