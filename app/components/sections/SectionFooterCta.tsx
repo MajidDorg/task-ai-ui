@@ -62,8 +62,10 @@ export default function SectionFooterCta() {
                 />
               </div>
               <p className="mt-3 md:mt-5 md:max-w-2xl text-[13px] md:text-[15px] leading-[160%] font-normal text-shade-off font-['Plus Jakarta Sans',sans-serif]">
-                Secured. Verified. Built for ROI — powered by AI to redefine
-                construction finance.
+                THEHANDOVER.AI is the AI copilot for land & development
+                decisions. <br />
+                Paste an address → get instant feasibility: zoning, utilities,
+                costs & ROI. Try it Now!
               </p>
 
               {/* CTA (mobile full width) */}
