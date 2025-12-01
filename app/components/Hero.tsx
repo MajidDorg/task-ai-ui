@@ -522,7 +522,7 @@ function HeroChatInput() {
                   ref={preAttachRef}
                   type="button"
                   onClick={handleAttachClick}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 -ml-1 md:-ml-2"
+                  className="inline-flex h-6 w-6 md:h-9 md:w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 -ml-1 md:-ml-2"
                   aria-label="Add attachment"
                 >
                   <Image
@@ -530,7 +530,7 @@ function HeroChatInput() {
                     alt="Attachment"
                     width={24}
                     height={24}
-                    className="h-[36px] w-[36px]"
+                    className="h-6 w-6 md:h-[18px] md:w-[18px]"
                   />
                 </button>
                 <input
@@ -542,12 +542,12 @@ function HeroChatInput() {
                   onBlur={() => setFocused(false)}
                   placeholder="Ask me anything..."
                   aria-label="Ask me anything"
-                  className="min-w-0 flex-1 bg-transparent text-[16px] md:text-[18px] leading-tight text-gray-50 placeholder-gray-50 outline-none font-['Plus_Jakarta_Sans',sans-serif]"
+                  className="min-w-0 flex-1 bg-transparent text-[14px] md:text-[14px] leading-tight text-gray-50 placeholder-gray-50 outline-none font-['Plus_Jakarta_Sans',sans-serif]"
                 />
                 <button
                   ref={preSendRef}
                   type="submit"
-                  className="inline-flex h-8 w-10 items-center justify-center rounded-full bg-success-60 text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30 md:h-8 md:w-10"
+                  className="inline-flex h-7 w-9 md:h-8 md:w-10 items-center justify-center rounded-full bg-success-60 text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30"
                   aria-label="Run"
                 >
                   <Image
@@ -555,7 +555,7 @@ function HeroChatInput() {
                     alt="Sparkle"
                     width={18}
                     height={18}
-                    className="h-[18px] w-[18px]"
+                    className="h-[16px] w-[16px] md:h-[18px] md:w-[18px]"
                   />
                 </button>
               </div>
@@ -580,7 +580,7 @@ function HeroChatInput() {
                   placeholder="Ask me anything..."
                   aria-label="Ask me anything"
                   rows={2}
-                  className="min-h-[48px] w-full resize-none bg-transparent text-[16px] leading-[22px] text-black placeholder-gray-50 outline-none font-['Plus_Jakarta_Sans',sans-serif] md:min-h-[56px] md:text-[24px] md:leading-[28px]"
+                  className="min-h-[48px] w-full resize-none bg-transparent text-[14px] leading-[20px] text-black placeholder-gray-50 outline-none font-['Plus_Jakarta_Sans',sans-serif] md:min-h-[56px] md:text-[16px] md:leading-[22px]"
                 />
               </div>
               {isDraggingOver && (
@@ -622,7 +622,7 @@ function HeroChatInput() {
                   ref={postAttachRef}
                   type="button"
                   onClick={handleAttachClick}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
+                  className="inline-flex h-6 w-6 md:h-9 md:w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
                   aria-label="Add attachment"
                 >
                   <Image
@@ -630,13 +630,13 @@ function HeroChatInput() {
                     alt="Sparkle"
                     width={24}
                     height={24}
-                    className="h-[36px] w-[36px]"
+                    className="h-6 w-6 md:h-[18px] md:w-[18px]"
                   />
                 </button>
                 <div className="flex items-center gap-3 md:gap-4">
                   <button
                     type="button"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
+                    className="inline-flex h-6 w-6 md:h-9 md:w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100 hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300"
                     aria-label="Voice input"
                   >
                     <Image
@@ -644,13 +644,13 @@ function HeroChatInput() {
                       alt="Microphone"
                       width={24}
                       height={24}
-                      className="h-[36px] w-[36px]"
+                      className="h-6 w-6 md:h-[18px] md:w-[18px]"
                     />
                   </button>
                   <button
                     ref={postAnalyzeRef}
                     type="submit"
-                    className="inline-flex h-10 items-center justify-center gap-2 rounded-[1234px] bg-success-60 px-5 text-[16px] font-semibold text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30 md:h-10 md:px-6"
+                    className="inline-flex h-9 items-center justify-center gap-2 rounded-[1234px] bg-success-60 px-4 text-[14px] font-semibold text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30 md:h-10 md:px-6 md:text-[16px]"
                     aria-label="Analyze"
                   >
                     Analyze
@@ -659,7 +659,7 @@ function HeroChatInput() {
                       alt="Sparkle"
                       width={18}
                       height={18}
-                      className="h-[18px] w-[18px]"
+                      className="h-[16px] w-[16px] md:h-[18px] md:w-[18px]"
                     />
                   </button>
                 </div>
