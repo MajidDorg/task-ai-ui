@@ -547,7 +547,7 @@ function HeroChatInput() {
                 <button
                   ref={preSendRef}
                   type="submit"
-                  className="inline-flex h-7 w-9 md:h-8 md:w-10 items-center justify-center rounded-full bg-success-60 text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30"
+                  className="inline-flex h-7 w-9 md:h-10 md:w-12 items-center justify-center rounded-full bg-success-60 text-white transition-colors hover:bg-[#22c55e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success-60/30"
                   aria-label="Run"
                 >
                   <Image
@@ -555,7 +555,7 @@ function HeroChatInput() {
                     alt="Sparkle"
                     width={18}
                     height={18}
-                    className="h-[16px] w-[16px] md:h-[18px] md:w-[18px]"
+                    className="h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                   />
                 </button>
               </div>
